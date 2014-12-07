@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FizzBuzz</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    // TODO - change this to be my app AdMobID
+    // This is the AdMob test ID ---
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="imageView">FizzBuzz</string>
+    <string name="textView">FizzBuzz Counter</string>
+    <string name="buttonAdd">+</string>
+    <string name="buttonAuto">AUTO</string>
+    <string name="buttonSubtract">-</string>
+
+</resources>

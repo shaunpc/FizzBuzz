@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/fizzbuzz"
+        android:contentDescription="@string/imageView"
+        android:onClick="counterReset" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/textView"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toLeftOf="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView"
+        android:contentDescription="@string/buttonAdd"
+        android:onClick="counterAdd"
+        android:text="@string/buttonAdd"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonAuto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/buttonSubtract"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:contentDescription="@string/buttonAuto"
+        android:onClick="counterAuto"
+        android:text="@string/buttonAuto" />
+
+    <Button
+        android:id="@+id/buttonSubtract"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/buttonAdd"
+        android:layout_alignStart="@+id/buttonAdd"
+        android:layout_below="@+id/buttonAdd"
+        android:contentDescription="@string/buttonSubtract"
+        android:onClick="counterSubtract"
+        android:text="@string/buttonSubtract"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textStyle="bold" />
+
+    <fragment
+        android:id="@+id/adFragment"
+        android:name="com.spc.fizzbuzz.MainActivity$AdFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

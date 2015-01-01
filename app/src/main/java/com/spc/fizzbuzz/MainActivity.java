@@ -1,10 +1,10 @@
 package com.spc.fizzbuzz;
 
 import android.graphics.Color;
-import android.os.CountDownTimer;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -185,6 +185,28 @@ public class MainActivity extends ActionBarActivity {
         fizzbuzzCounter = 0;
         setFizzbuzzText (fizzbuzzCounter);
 
+    }
+
+    // These two overrides should store the current value of the counter, such that if the
+    // app reappears, it doesn't reset it to zero!
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        Log.v(TAG, "...inside onSaveInstanceState; fbc being stored is " + fizzbuzzCounter);
+        savedInstanceState.putInt("fizzbuzzCounter", fizzbuzzCounter);
+        // etc.
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+        fizzbuzzCounter = savedInstanceState.getInt("fizzbuzzCounter");
+        Log.v(TAG, "...inside onRestoreInstanceState; fbc retrieved is " + fizzbuzzCounter);
     }
 
      /**

@@ -3,7 +3,7 @@
 
     <string name="app_name">FizzBuzz</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_reset_counter">Reset Counter</string>
 
     // TODO - change this to be my app AdMobID
     // This is the AdMob test ID ---
@@ -12,7 +12,9 @@
     <string name="imageView">FizzBuzz</string>
     <string name="textView">FizzBuzz Counter</string>
     <string name="buttonAdd">+</string>
+    <string name="buttonStop">STOP</string>
     <string name="buttonAuto">AUTO</string>
     <string name="buttonSubtract">-</string>
+    <string name="ready"> READY! </string>
 
 </resources>

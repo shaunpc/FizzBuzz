@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -22,7 +22,7 @@ import java.util.Random;
 
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "FizzBuzz";
     TextView    textView;
@@ -66,7 +66,9 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset_counter) {
+            //Call the counterReset function with a null view parameter
+            counterReset(null);
             return true;
         }
 
@@ -93,16 +95,16 @@ public class MainActivity extends ActionBarActivity {
                         fizzbuzzCounter = 0;
                         setFizzbuzzText(fizzbuzzCounter);
                         fizzbuzzTimer = null;
-                        buttonAuto.setText("AUTO");
+                        buttonAuto.setText(getString(R.string.buttonAuto));
                     }
                     // start the thing going
                 }.start();
-                buttonAuto.setText("STOP");
+                buttonAuto.setText(getString(R.string.buttonStop));
             } else {
                 Log.v(TAG, "...inside counterAuto - timer is NOT NULL; fbc is " + fizzbuzzCounter);
                 fizzbuzzTimer.cancel();
                 fizzbuzzTimer = null;
-                buttonAuto.setText("AUTO");
+                buttonAuto.setText(getString(R.string.buttonAuto));
             }
 
     }
@@ -121,7 +123,7 @@ public class MainActivity extends ActionBarActivity {
             Log.v(TAG, "...inside counterAdd - cancelling timer; fbc is " + fizzbuzzCounter);
             fizzbuzzTimer.cancel();
             fizzbuzzTimer = null;
-            buttonAuto.setText("AUTO");
+            buttonAuto.setText(getString(R.string.buttonAuto));
         }
         fizzbuzzCounter = fizzbuzzCounter + 1;
         setFizzbuzzText(fizzbuzzCounter);
@@ -133,7 +135,7 @@ public class MainActivity extends ActionBarActivity {
         randomColour = getRandomColour ();
         textView.setTextColor(randomColour);
         if (fbc == 0)  {
-            textView.setText("> READY! <");
+            textView.setText(getString(R.string.ready));
         } else {
             //
             // This is the real CODING TEST
@@ -162,7 +164,7 @@ public class MainActivity extends ActionBarActivity {
             Log.v(TAG, "...inside counterSubtract - cancelling timer; fbc is " + fizzbuzzCounter);
             fizzbuzzTimer.cancel();
             fizzbuzzTimer = null;
-            buttonAuto.setText("AUTO");
+            buttonAuto.setText(getString(R.string.buttonAuto));
         }
 
         // ensure the counter doesn't go negative
@@ -180,7 +182,7 @@ public class MainActivity extends ActionBarActivity {
             Log.v(TAG, "...inside counterReset - cancelling timer; fbc is " + fizzbuzzCounter);
             fizzbuzzTimer.cancel();
             fizzbuzzTimer = null;
-            buttonAuto.setText("AUTO");
+            buttonAuto.setText(getString(R.string.buttonAuto));
         }
         fizzbuzzCounter = 0;
         setFizzbuzzText (fizzbuzzCounter);
@@ -230,7 +232,7 @@ public class MainActivity extends ActionBarActivity {
             super.onActivityCreated(bundle);
             // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
             // values/strings.xml.
-            AdView mAdView = (AdView) getView().findViewById(R.id.adView);
+            mAdView = (AdView) getView().findViewById(R.id.adView);
 
             // Add the test device whilst getting just test ads
             AdRequest adRequest = new AdRequest.Builder()

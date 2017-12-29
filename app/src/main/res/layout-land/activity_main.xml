@@ -25,7 +25,7 @@
         android:layout_marginBottom="20dp"
         android:contentDescription="@string/textView"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textSize="@dimen/fb_text"
         android:textStyle="bold" />
 
     <Button
@@ -33,13 +33,12 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignTop="@+id/textView"
-        android:layout_toLeftOf="@+id/imageView"
         android:layout_toStartOf="@+id/imageView"
         android:contentDescription="@string/buttonAdd"
         android:onClick="counterAdd"
         android:text="@string/buttonAdd"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textSize="@dimen/fb_text"
         android:textStyle="bold" />
 
     <Button
@@ -48,7 +47,6 @@
         android:layout_height="80dp"
         android:layout_alignTop="@+id/buttonSubtract"
         android:layout_toEndOf="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
         android:contentDescription="@string/buttonAuto"
         android:onClick="counterAuto"
         android:text="@string/buttonAuto" />
@@ -57,14 +55,13 @@
         android:id="@+id/buttonSubtract"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignLeft="@+id/buttonAdd"
         android:layout_alignStart="@+id/buttonAdd"
         android:layout_below="@+id/buttonAdd"
         android:contentDescription="@string/buttonSubtract"
         android:onClick="counterSubtract"
         android:text="@string/buttonSubtract"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textSize="@dimen/fb_text"
         android:textStyle="bold" />
 
     <fragment

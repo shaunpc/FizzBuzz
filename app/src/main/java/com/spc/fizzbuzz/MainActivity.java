@@ -3,6 +3,7 @@ package com.spc.fizzbuzz;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // get the other relevant UI elements
-        textView = (TextView) findViewById(R.id.textView);
-        buttonAuto = (Button) findViewById(R.id.buttonAuto);
+        textView = findViewById(R.id.textView);
+        buttonAuto = findViewById(R.id.buttonAuto);
 
         Log.v(TAG, "setting initial textview text");
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize);
@@ -222,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             return inflater.inflate(R.layout.fragment_ad, container, false);
         }
@@ -232,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
             super.onActivityCreated(bundle);
             // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
             // values/strings.xml.
-            mAdView = (AdView) getView().findViewById(R.id.adView);
+            mAdView = getView().findViewById(R.id.adView);
 
             // Add the test device whilst getting just test ads
             AdRequest adRequest = new AdRequest.Builder()
